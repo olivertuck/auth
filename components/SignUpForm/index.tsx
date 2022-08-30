@@ -1,8 +1,8 @@
-import Input from '../Input';
+import SignUpInput from '../SignUpInput';
 import { SignUpValues } from '../../types';
 import { signUpSchema } from '../../schemas';
 import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
+import { yupResolver } from '@hookform/resolvers/yup';
 
 const SignUpForm = () => {
   const { control, handleSubmit } = useForm<SignUpValues>({
@@ -12,32 +12,27 @@ const SignUpForm = () => {
       password: '',
       username: '',
     },
-    resolver: zodResolver(signUpSchema),
+    resolver: yupResolver(signUpSchema),
   });
   const signUp = () => {};
 
   return (
     <form onSubmit={handleSubmit(signUp)}>
-      <Input<SignUpValues>
-        control={control}
-        id="name"
-        label="Name"
-        name="name"
-      />
-      <Input<SignUpValues>
+      <SignUpInput control={control} id="name" label="Name" name="name" />
+      <SignUpInput
         control={control}
         id="email"
         label="Email"
         name="email"
         type="email"
       />
-      <Input<SignUpValues>
+      <SignUpInput
         control={control}
         id="username"
         label="Username"
         name="username"
       />
-      <Input<SignUpValues>
+      <SignUpInput
         control={control}
         id="password"
         label="Password"

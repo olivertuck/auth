@@ -1,5 +1,5 @@
 import Input from './Input';
 import SignUpForm from './SignUpForm';
+import SignUpInput from './SignUpInput';
 
-// eslint-disable-next-line import/prefer-default-export
-export { Input, SignUpForm };
+export { Input, SignUpForm, SignUpInput };

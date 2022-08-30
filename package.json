@@ -10,13 +10,15 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^2.9.7",
+    "lodash-es": "^4.17.21",
     "next": "12.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.34.2",
-    "zod": "^3.18.0"
+    "yup": "^0.32.11"
   },
   "devDependencies": {
+    "@types/lodash-es": "^4.17.6",
     "@types/node": "18.7.13",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",

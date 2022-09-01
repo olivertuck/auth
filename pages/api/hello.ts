@@ -5,7 +5,9 @@ type Data = {
 };
 
 const handler: NextApiHandler<Data> = (req, res) => {
-  res.status(200).json({ name: 'John Doe' });
+  res.status(200).json({
+    name: 'John Doe'
+  });
 };
 
 export default handler;

@@ -1,6 +1,5 @@
 import Input from '../Input';
 import SignUpInputProps from './SignUpInputProps';
-import { SignUpValues } from '../../types';
 
 const SignUpInput = ({
   control,

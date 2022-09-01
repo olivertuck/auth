@@ -1,23 +1,18 @@
+import Button from '../Button';
+import Form from '../Form';
 import SignUpInput from '../SignUpInput';
 import { SignUpValues } from '../../types';
-import { signUpSchema } from '../../schemas';
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
+import { useSignUpForm } from '../../hooks';
 
 const SignUpForm = () => {
-  const { control, handleSubmit } = useForm<SignUpValues>({
-    defaultValues: {
-      email: '',
-      name: '',
-      password: '',
-      username: '',
-    },
-    resolver: yupResolver(signUpSchema),
-  });
-  const signUp = () => {};
+  const { control, handleSubmit } = useSignUpForm();
+
+  const signUp = (values: SignUpValues) => {
+    console.log(values);
+  };
 
   return (
-    <form onSubmit={handleSubmit(signUp)}>
+    <Form onSubmit={handleSubmit(signUp)}>
       <SignUpInput control={control} id="name" label="Name" name="name" />
       <SignUpInput
         control={control}
@@ -39,8 +34,8 @@ const SignUpForm = () => {
         name="password"
         type="password"
       />
-      <button type="submit">Sign up</button>
-    </form>
+      <Button>Sign up</Button>
+    </Form>
   );
 };
 
